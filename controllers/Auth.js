@@ -22,6 +22,7 @@ exports.signup=async(req,res)=>{
 
         // creating new user
         const createdUser=new User(req.body)
+        createdUser.isVerified = true;
         await createdUser.save()
 
         // getting secure user info
